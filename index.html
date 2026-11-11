@@ -98,6 +98,8 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
 .sheet tr.sep td{border-top:2px solid var(--line)}
 .legend{font-size:12px;color:var(--muted);margin-top:8px}
 .legend span{color:var(--blue-700);font-weight:600}
+#roadmap tr.away td{background:var(--amber-050);color:#6A4A0C}
+#roadmap tr.away td.k{color:#6A4A0C}
 </style>
 <main class="wrap">
 <h1 id="contents">1,000 leads, 500 valid, <span class="hl">50 qualified a day.</span></h1>
@@ -125,7 +127,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
         <td><div class="pt"><span class="no">1</span>Scrape leads online (Google Maps etc.)</div><ul><li>All collected leads should be enriched</li><li class="add">Search by city + business type (trading, distribution, retail, services)</li><li class="add">Add contact name, role, email, phone, website</li></ul></td>
         <td><ul><li>AI scraping; AI team already scrapes email leads</li><li class="add">Verify every email and phone before use</li><li class="add">Remove duplicates against the CRM</li><li class="add">Tag source "Maps" on every record</li><li class="add">Load to Brevo as its own list</li></ul></td>
         <td class="pb"><ul><li>Need someone to qualify this</li><li class="add"><b>No SPF</b> on our domain: volume email goes to spam or gets blocked</li><li class="add"><b>Generic emails</b> (info@, sales@) rarely reply</li><li class="add">Fix: separate sending domain, slow warm-up, business contacts only, opt-out in every email</li></ul></td>
-        <td class="nx"><b>AI team</b><br>First 200-lead test batch<br><span>By 20 Nov</span></td>
+        <td class="nx"><b>AI team</b><br>First 200-lead test batch (runs while Rico is away)<br><span>By 20 Nov, reviewed 23 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">2</span>Buying signals in public data</div><ul><li>Newly registered companies in SEC and DTI public listings</li><li class="add">New companies must set up BIR books: strong CAS fit</li></ul></td>
@@ -156,7 +158,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
         <td><div class="pt"><span class="no">6</span>Expo, event and B2B conference participant lists</div></td>
         <td><ul><li>Collect participant information and their contact details</li><li class="add">Exhibitor lists are usually public: start there</li><li class="add">At events we attend: QR code &rarr; landing page</li><li class="add">Follow up within 48 hours of the event</li></ul></td>
         <td class="pb"><ul><li>Look for publicly listed events, focused on B2B networking</li><li class="add"><b>Attendee lists</b> are often not public</li><li class="add">Event dates are uneven: lumpy volume</li></ul></td>
-        <td class="nx"><b>Rico</b><br>List of Nov-Feb PH B2B events<br><span>By 20 Nov</span></td>
+        <td class="nx"><b>Rico</b><br>List of Nov-Feb PH B2B events<br><span>By 24 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">7</span>Buy lead lists from salespeople, employees</div></td>
@@ -181,7 +183,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
         <td><div class="pt"><span class="no">10</span>Lead generation agency</div><ul><li>Agency that qualifies leads, works on them, with KPIs and goals; have a discussion</li></ul></td>
         <td><ul><li>Currently looking for a lead generation agency to talk to</li><li class="add">Shortlist 3 with PH B2B proof</li><li class="add">30-day trial with written KPIs: qualified leads a week, cost per qualified lead, show-up rate</li><li class="add">They use our CRM and approved copy</li></ul></td>
         <td class="pb"><ul><li>Create a proper plan for qualifying leads; referral bonus</li><li class="add"><b>Paid per lead</b> = junk: pay on qualified leads or meetings held</li><li class="add">Budget: Meta cap US$2,000 a month</li></ul></td>
-        <td class="nx"><b>Rico &rarr; Sky</b><br>3 agencies shortlisted<br><span>By 20 Nov</span></td>
+        <td class="nx"><b>Rico &rarr; Sky</b><br>3 agencies shortlisted<br><span>By 25 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">11</span>Referral programme</div><ul><li>For people who refer a company that's interested in the service</li></ul></td>
@@ -211,7 +213,9 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
   <table class="sheet">
     <thead><tr><th>Phase</th><th>Dates</th><th>Do</th><th>Go/no-go check</th></tr></thead>
     <tbody>
-      <tr><td class="k">0. Set up</td><td>12-27 Nov</td><td>Agree valid/qualified; data rules; sending domain; agency talks</td><td>Domain ready, rules signed</td></tr>
+      <tr><td class="k">0a. Before leave</td><td>12-14 Nov</td><td>Valid/qualified + data rule to Sky; contacts sheet to the team; brief AI team on the test batch</td><td>Decisions 1-3 made</td></tr>
+      <tr class="away"><td class="k">Rico away</td><td>16-20 Nov</td><td>No new launches. Still running: ads, AI team test batch, scheduled social posts</td><td>-</td></tr>
+      <tr><td class="k">0b. Set up</td><td>23-27 Nov</td><td>Review test batch; sending domain; events list; agency shortlist; post calendar + landing page</td><td>Domain ready, agency picked</td></tr>
       <tr><td class="k">1. First volume</td><td>30 Nov-11 Dec</td><td>1 Dec campaign; scraping + events at small volume; referral launch</td><td>4 weeks of data</td></tr>
       <tr><td class="k">2. Scale</td><td>14 Dec-15 Jan</td><td>Raise volume on what works; agency trial; CPA, broker, job-post and VA referrals</td><td>25 qualified a day</td></tr>
       <tr><td class="k">3. Full rate</td><td>18 Jan-12 Feb</td><td>ORUS deadline push to 30 Jan</td><td>500 valid + 50 qualified a day, 5 days in a row</td></tr>
@@ -240,8 +244,8 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
       <tr><td class="chk"><input type="checkbox" id="d1" aria-label="Decision 1 done"></td><td class="k">1. Valid and qualified definitions</td><td>Approve the Goal column</td><td>13 Nov</td></tr>
       <tr><td class="chk"><input type="checkbox" id="d2" aria-label="Decision 2 done"></td><td class="k">2. Data rule (client, ex-employer, bought lists)</td><td>Consent only; client introductions instead of database pulls</td><td>13 Nov</td></tr>
       <tr><td class="chk"><input type="checkbox" id="d3" aria-label="Decision 3 done"></td><td class="k">3. Who qualifies leads</td><td>Name one owner</td><td>13 Nov</td></tr>
-      <tr><td class="chk"><input type="checkbox" id="d4" aria-label="Decision 4 done"></td><td class="k">4. Separate sending domain</td><td>Set up before any volume email</td><td>20 Nov</td></tr>
-      <tr><td class="chk"><input type="checkbox" id="d5" aria-label="Decision 5 done"></td><td class="k">5. Agency + budget</td><td>30-day trial, paid on qualified leads</td><td>20 Nov</td></tr>
+      <tr><td class="chk"><input type="checkbox" id="d4" aria-label="Decision 4 done"></td><td class="k">4. Separate sending domain</td><td>Set up before any volume email</td><td>24 Nov</td></tr>
+      <tr><td class="chk"><input type="checkbox" id="d5" aria-label="Decision 5 done"></td><td class="k">5. Agency + budget</td><td>30-day trial, paid on qualified leads</td><td>27 Nov</td></tr>
       <tr><td class="chk"><input type="checkbox" id="d6" aria-label="Decision 6 done"></td><td class="k">6. Referral terms (CPA, job-post, broker, VA, public)</td><td>One simple bonus structure for all</td><td>1 Dec</td></tr>
     </tbody>
   </table>
