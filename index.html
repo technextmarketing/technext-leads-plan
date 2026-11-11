@@ -22,7 +22,7 @@
 *{box-sizing:border-box}
 html{scroll-padding-top:20px;scroll-behavior:smooth}
 body{margin:0;background:var(--white);color:var(--body);font:400 14.5px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
 header{border-bottom:1px solid var(--line);padding:18px 0}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
 header img{height:28px;width:auto;display:block}
@@ -75,7 +75,11 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
 /* compact sheet table: Goal | Process | Solution | Problem */
 .sheet{font-size:13px;line-height:1.45}
 .sheet th,.sheet td{padding:8px 11px}
-#plan .sheet th:nth-child(1){width:15%} #plan .sheet th:nth-child(2){width:27%} #plan .sheet th:nth-child(3){width:29%} #plan .sheet th:nth-child(4){width:29%}
+#plan .sheet th:nth-child(1){width:12%} #plan .sheet th:nth-child(2){width:22%} #plan .sheet th:nth-child(3){width:26%} #plan .sheet th:nth-child(4){width:26%} #plan .sheet th:nth-child(5){width:14%}
+.sheet td.nx{font-size:12.5px;color:var(--body);background:#FBFCFF}
+.sheet td.nx b{color:var(--ink);font-weight:700}
+.sheet td.nx span{display:inline-block;margin-top:4px;font-weight:700;color:var(--blue-700)}
+.sheet .gs b{color:var(--ink)}
 #roadmap th:nth-child(1){width:15%} #roadmap th:nth-child(2){width:14%} #risks th:nth-child(1){width:42%} #risks th:nth-child(2){width:12%} #decide th:nth-child(2){width:36%} #decide th:nth-child(4){width:12%}
 .sheet td.goal{background:var(--blue-050);border-right:1px solid var(--blue-100)}
 .sheet td.goal.q{background:var(--ok-050);border-right-color:#BFE3CF}
@@ -103,7 +107,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
   <table class="toc" aria-label="Contents">
     <thead><tr><th style="padding-left:16px">Contents</th></tr></thead>
     <tbody>
-      <tr><td><a href="#plan"><span class="no">1</span><span class="t">Leads plan</span><span>Goal, process, solution, problem (as in the sheet)</span><span class="go">Go &rarr;</span></a></td></tr>
+      <tr><td><a href="#plan"><span class="no">1</span><span class="t">Leads plan</span><span>Goal, process, solution, problem and next step for 13 processes</span><span class="go">Go &rarr;</span></a></td></tr>
       <tr><td><a href="#roadmap"><span class="no">2</span><span class="t">Roadmap</span><span>Four phases with go/no-go checks</span><span class="go">Go &rarr;</span></a></td></tr>
       <tr><td><a href="#risks"><span class="no">3</span><span class="t">Other risks</span><span>Problems across all processes</span><span class="go">Go &rarr;</span></a></td></tr>
       <tr><td><a href="#decide"><span class="no">4</span><span class="t">Decisions for Sky</span><span>Approvals to start</span><span class="go">Go &rarr;</span></a></td></tr>
@@ -114,74 +118,92 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
 <section id="plan">
   <div class="sh"><h2><span class="n">1</span>Leads plan</h2><a class="top" href="#contents">&uarr; Contents</a></div>
   <table class="sheet">
-    <thead><tr><th>Goal</th><th>Process</th><th>Solution</th><th>Problem</th></tr></thead>
+    <thead><tr><th>Goal</th><th>Process</th><th>Solution</th><th>Problem</th><th>Next step</th></tr></thead>
     <tbody>
       <tr>
-        <td class="goal" rowspan="2"><div class="gn">1,000</div><div class="gl">leads per day</div><div class="gs">Raw leads from sourcing. Today: ~6 good leads a day.</div></td>
-        <td><div class="pt"><span class="no">1</span>Scrape leads online (Google Maps etc.)</div><ul><li>Enrich every lead</li></ul></td>
-        <td><ul><li>AI scraping; AI team already scrapes email leads</li><li class="add">Verify email/phone, remove duplicates</li></ul></td>
-        <td class="pb"><ul><li>Need someone to qualify them</li><li class="add"><b>No SPF</b> on our domain: volume email goes to spam</li></ul></td>
+        <td class="goal" rowspan="2"><div class="gn">1,000</div><div class="gl">leads per day</div><div class="gs">Raw leads from sourcing: any PH company that may need BIR CAS.<br>Today: ~6 good leads a day.<br>Most of the 1,000 must come from these two rows.</div></td>
+        <td><div class="pt"><span class="no">1</span>Scrape leads online (Google Maps etc.)</div><ul><li>All collected leads should be enriched</li><li class="add">Search by city + business type (trading, distribution, retail, services)</li><li class="add">Add contact name, role, email, phone, website</li></ul></td>
+        <td><ul><li>AI scraping; AI team already scrapes email leads</li><li class="add">Verify every email and phone before use</li><li class="add">Remove duplicates against the CRM</li><li class="add">Tag source "Maps" on every record</li><li class="add">Load to Brevo as its own list</li></ul></td>
+        <td class="pb"><ul><li>Need someone to qualify this</li><li class="add"><b>No SPF</b> on our domain: volume email goes to spam or gets blocked</li><li class="add"><b>Generic emails</b> (info@, sales@) rarely reply</li><li class="add">Fix: separate sending domain, slow warm-up, business contacts only, opt-out in every email</li></ul></td>
+        <td class="nx"><b>AI team</b><br>First 200-lead test batch<br><span>By 20 Nov</span></td>
       </tr>
       <tr>
-        <td><div class="pt"><span class="no">2</span>Buying signals: newly registered companies (SEC, DTI listings)</div></td>
-        <td><ul><li>Scrape the data</li><li class="add">New companies must set up BIR books: strong CAS fit</li></ul></td>
-        <td class="pb"><ul><li class="add"><b>No contact person</b> in listings; needs enriching</li><li class="add">Check each site's terms of use</li></ul></td>
+        <td><div class="pt"><span class="no">2</span>Buying signals in public data</div><ul><li>Newly registered companies in SEC and DTI public listings</li><li class="add">New companies must set up BIR books: strong CAS fit</li></ul></td>
+        <td><ul><li>Scrape the data</li><li class="add">Pull new registrations weekly</li><li class="add">Find the owner or accountant via LinkedIn / company page</li><li class="add">Email: "Just registered? Set up BIR CAS from day one"</li></ul></td>
+        <td class="pb"><ul><li class="add"><b>No contact person</b> in listings: each lead needs enriching</li><li class="add"><b>Terms of use:</b> check each site allows the use</li><li class="add">Very new companies may not be ready to buy yet</li></ul></td>
+        <td class="nx"><b>AI team</b><br>Check SEC/DTI access + first weekly pull<br><span>By 27 Nov</span></td>
       </tr>
       <tr class="sep">
-        <td class="goal" rowspan="7"><div class="gn">500</div><div class="gl">valid leads per day</div><div class="gs">Valid = real PH company, named contact, checked email or phone, no duplicate.</div></td>
-        <td><div class="pt"><span class="no">3</span>Leads from current clients' Odoo databases</div></td>
-        <td><ul><li>Ask Dev if they can pull data from current clients</li><li class="add">Safer: ask clients for introductions</li></ul></td>
-        <td class="pb"><ul><li>Not sure about the contract and how we work</li><li class="add"><b>Data Privacy Act:</b> client data belongs to the client; needs their written OK</li></ul></td>
+        <td class="goal" rowspan="7"><div class="gn">500</div><div class="gl">valid leads per day</div><div class="gs"><b>Valid</b> = real PH company, named contact, checked email or phone, no duplicate, source recorded.<br>Half of the 1,000 should pass this check.</div></td>
+        <td><div class="pt"><span class="no">3</span>Leads from current clients</div><ul><li>If they have leads in their Odoo database</li></ul></td>
+        <td><ul><li>Ask Dev if they can pull data from current clients</li><li class="add">Safer: ask each client for introductions</li><li class="add">Give them a short intro email + referral card to forward</li><li class="add">Ask at go-live and at the 3-month check-in</li></ul></td>
+        <td class="pb"><ul><li>Not sure about the contract and how we work</li><li class="add"><b>Data Privacy Act:</b> client data belongs to the client; pulling it needs their written OK</li><li class="add">Could damage client trust</li></ul></td>
+        <td class="nx"><b>Sky</b><br>Decide the data rule<br><span>By 13 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">4</span>Employees' previous contact lists</div></td>
-        <td><ul><li>Ask the team for leads from their previous companies</li></ul></td>
-        <td class="pb"><ul><li class="add"><b>Ex-employer data</b> may be under NDA; personal network only</li></ul></td>
+        <td><ul><li>Ask the team for leads from their previous companies</li><li class="add">One shared sheet: name, company, role, how they know them</li><li class="add">Employee makes the first personal message</li></ul></td>
+        <td class="pb"><ul><li class="add"><b>Ex-employer data</b> may be under NDA: use personal network contacts only, not exported customer lists</li><li class="add">Small one-off volume</li></ul></td>
+        <td class="nx"><b>Rico</b><br>Shared sheet sent to the team<br><span>By 14 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">5</span>Facebook social media</div></td>
-        <td><ul><li>Social media pages being built now</li><li class="add">Every post links to a landing page</li></ul></td>
-        <td class="pb"><ul><li>Materials take time and budget</li></ul></td>
+        <td><ul><li>We are starting to build the social media platform</li><li class="add">Daily post on BIR CAS for accountants</li><li class="add">Every post links to a landing page with a form</li><li class="add">Share into accounting and business owner groups</li></ul></td>
+        <td class="pb"><ul><li>Need to work on materials; it will take time and budget</li><li class="add">Organic reach is slow: pair with Meta lead ads</li></ul></td>
+        <td class="nx"><b>Rico</b><br>2-week post calendar + first landing page<br><span>By 27 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">6</span>Expo, event and B2B conference participant lists</div></td>
-        <td><ul><li>Collect participants and their contact details</li><li class="add">QR code at our own booth &rarr; landing page</li></ul></td>
-        <td class="pb"><ul><li>Find publicly listed events, focused on B2B networking</li><li class="add">Attendee lists are often not public</li></ul></td>
+        <td><ul><li>Collect participant information and their contact details</li><li class="add">Exhibitor lists are usually public: start there</li><li class="add">At events we attend: QR code &rarr; landing page</li><li class="add">Follow up within 48 hours of the event</li></ul></td>
+        <td class="pb"><ul><li>Look for publicly listed events, focused on B2B networking</li><li class="add"><b>Attendee lists</b> are often not public</li><li class="add">Event dates are uneven: lumpy volume</li></ul></td>
+        <td class="nx"><b>Rico</b><br>List of Nov-Feb PH B2B events<br><span>By 20 Nov</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">7</span>Buy lead lists from salespeople, employees</div></td>
-        <td><ul><li class="add">Buy only where the seller shows consent; test a small batch first</li></ul></td>
-        <td class="pb"><ul><li class="add"><b>Bought lists:</b> unknown quality, often no consent; risk to our domain</li></ul></td>
+        <td><ul><li class="add">Buy only where the seller shows how consent was given</li><li class="add">Test a small batch (e.g. 100) before paying for more</li><li class="add">Pay per valid lead, not per row</li></ul></td>
+        <td class="pb"><ul><li class="add"><b>Unknown quality:</b> old, duplicate or fake contacts</li><li class="add"><b>No consent:</b> privacy risk and spam complaints</li><li class="add">Bounces can get our domain blocked</li></ul></td>
+        <td class="nx"><b>Sky</b><br>Approve or drop<br><span>By 13 Nov</span></td>
       </tr>
       <tr>
-        <td><div class="pt"><span class="no">8</span>CPA firms and freelance bookkeepers (10-20 SMEs each)</div><ul><li>Pay a referral when their client has the same problem</li></ul></td>
-        <td><ul><li>Post in groups and communities</li><li class="add">Co-branded CAS readiness pack for their clients</li></ul></td>
-        <td class="pb"><ul><li>Need to start building the community</li><li class="add"><b>Firms fear losing clients:</b> promise in writing they keep the client</li></ul></td>
+        <td><div class="pt"><span class="no">8</span>CPA firms and freelance bookkeepers</div><ul><li>They handle mostly 10-20 SMEs</li><li>Pay a referral if their client has the same problem</li></ul></td>
+        <td><ul><li>Do social media posting to different groups and communities</li><li class="add">Partner offer: we do the BIR CAS set-up, the firm keeps the client and the books</li><li class="add">Co-branded CAS readiness pack for their clients</li><li class="add">Unique code per partner to track referrals</li></ul></td>
+        <td class="pb"><ul><li>Need to start building the community</li><li class="add"><b>Firms fear losing clients:</b> promise in writing</li><li class="add">Slow start: weeks to the first referral</li><li class="add">Referral fee not set</li></ul></td>
+        <td class="nx"><b>Rico</b><br>Partner one-pager + list of 50 firms<br><span>By 1 Dec</span></td>
       </tr>
       <tr>
         <td><div class="pt"><span class="no">9</span>Job posting, referral style</div></td>
-        <td><ul><li>Reach people looking for a job; offer a referral per client</li></ul></td>
-        <td class="pb"><ul><li>Ask Ms Pia to help post on JobStreet</li><li class="add"><b>Be clear</b> it's a referral role, not a salaried job (JobStreet rules)</li></ul></td>
+        <td><ul><li>Connect to people looking for a job; offer a referral per client</li><li class="add">Post a commission-only "referral partner" role</li><li class="add">Short brief: who to look for, how to send a lead</li></ul></td>
+        <td class="pb"><ul><li>Ask Ms Pia for help posting on JobStreet</li><li class="add"><b>Be clear</b> it's commission-only, not a salaried job (JobStreet rules, honest to applicants)</li><li class="add">Needs the referral fee first</li></ul></td>
+        <td class="nx"><b>Ms Pia + Rico</b><br>JobStreet post draft<br><span>After referral terms</span></td>
       </tr>
       <tr class="sep">
-        <td class="goal q" rowspan="3"><div class="gn">50</div><div class="gl">qualified leads per day</div><div class="gs">Qualified = raised a hand, needs BIR CAS, agrees to a 15-20 min online meeting. Handed to Sales within 1 working day.</div></td>
-        <td><div class="pt"><span class="no">10</span>Lead generation agency with KPIs and goals</div></td>
-        <td><ul><li>Looking for an agency to talk to now</li><li class="add">30-day trial, paid on qualified leads</li></ul></td>
-        <td class="pb"><ul><li>Need a proper plan for qualifying leads; referral bonus</li><li class="add">Agencies paid per lead send junk</li></ul></td>
+        <td class="goal q" rowspan="4"><div class="gn">50</div><div class="gl">qualified leads per day</div><div class="gs"><b>Qualified</b> = raised a hand (replied, registered, booked, referred), needs BIR CAS, agrees to a 15-20 min online meeting.<br>Handed to Sales within 1 working day.<br>50 a day = about 250 a week.</div></td>
+        <td><div class="pt"><span class="no">10</span>Lead generation agency</div><ul><li>Agency that qualifies leads, works on them, with KPIs and goals; have a discussion</li></ul></td>
+        <td><ul><li>Currently looking for a lead generation agency to talk to</li><li class="add">Shortlist 3 with PH B2B proof</li><li class="add">30-day trial with written KPIs: qualified leads a week, cost per qualified lead, show-up rate</li><li class="add">They use our CRM and approved copy</li></ul></td>
+        <td class="pb"><ul><li>Create a proper plan for qualifying leads; referral bonus</li><li class="add"><b>Paid per lead</b> = junk: pay on qualified leads or meetings held</li><li class="add">Budget: Meta cap US$2,000 a month</li></ul></td>
+        <td class="nx"><b>Rico &rarr; Sky</b><br>3 agencies shortlisted<br><span>By 20 Nov</span></td>
       </tr>
       <tr>
-        <td><div class="pt"><span class="no">11</span>Referral programme for anyone who refers a company</div></td>
-        <td><ul><li>Public posting; current leads can join too</li><li class="add">Referral card + code per referrer</li></ul></td>
-        <td class="pb"><ul><li>Needs a proper structure</li><li class="add">Bonus terms: Sky + Neil decide</li></ul></td>
+        <td><div class="pt"><span class="no">11</span>Referral programme</div><ul><li>For people who refer a company that's interested in the service</li></ul></td>
+        <td><ul><li>Public posting; all current leads can also join the programme</li><li class="add">Referral card + link with a code per referrer</li><li class="add">"Who referred you?" on every booking form</li><li class="add">Bonus paid when the referred company signs</li></ul></td>
+        <td class="pb"><ul><li>Needs a proper structure</li><li class="add">Bonus amount and payout timing: Sky + Neil</li><li class="add">One structure shared with rows 8, 9, 12, 13</li></ul></td>
+        <td class="nx"><b>Sky + Neil</b><br>Referral terms<br><span>By 1 Dec</span></td>
       </tr>
       <tr>
-        <td><div class="pt"><span class="no">12</span>Brokers or agents who connect companies to us</div></td>
-        <td><ul><li>Connect to communities in service, manufacturing, e-commerce</li></ul></td>
-        <td class="pb"><ul><li class="add"><b>Commission terms</b> not set</li><li class="add">Our approved copy only, no BIR guarantees</li></ul></td>
+        <td><div class="pt"><span class="no">12</span>Brokers or agents</div><ul><li>Interested in working with us and connecting companies for their system requirements</li></ul></td>
+        <td><ul><li>Connect to communities, mostly in service, manufacturing and e-commerce</li><li class="add">Simple broker agreement: commission on signed deals</li><li class="add">Approved one-page pitch they can share</li></ul></td>
+        <td class="pb"><ul><li class="add"><b>Commission terms</b> not set</li><li class="add"><b>Over-promising:</b> our approved copy only, no BIR guarantees, no prices</li></ul></td>
+        <td class="nx"><b>Rico</b><br>Broker one-pager<br><span>After referral terms</span></td>
+      </tr>
+      <tr>
+        <td><div class="pt"><span class="no">13</span>Virtual assistants (VAs) with B2B leads</div><ul><li>Look for VAs who have leads for B2B companies</li><li>Differentiate the countries they work on</li></ul></td>
+        <td><ul><li>Need to work with them</li><li class="add">Find VAs on OnlineJobs.ph and Upwork</li><li class="add">Group by country: PH first, then SG and others</li><li class="add">Pay per qualified lead or booked meeting</li></ul></td>
+        <td class="pb"><ul><li class="add"><b>Quality varies:</b> trial each VA with a small batch</li><li class="add">Where did their leads come from? Consent check</li><li class="add">Other countries need a different offer (BIR CAS is PH only)</li></ul></td>
+        <td class="nx"><b>Rico</b><br>Post a VA brief + trial 2 VAs<br><span>By 4 Dec</span></td>
       </tr>
     </tbody>
   </table>
-  <p class="legend">Plain text = from the sheet. <span>+ Blue</span> = added by Rico.</p>
+  <p class="legend">Plain text = from the sheet. <span>+ Blue</span> = added by Rico. Dates are proposals.</p>
 </section>
 
 <section id="roadmap">
@@ -191,7 +213,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
     <tbody>
       <tr><td class="k">0. Set up</td><td>12-27 Nov</td><td>Agree valid/qualified; data rules; sending domain; agency talks</td><td>Domain ready, rules signed</td></tr>
       <tr><td class="k">1. First volume</td><td>30 Nov-11 Dec</td><td>1 Dec campaign; scraping + events at small volume; referral launch</td><td>4 weeks of data</td></tr>
-      <tr><td class="k">2. Scale</td><td>14 Dec-15 Jan</td><td>Raise volume on what works; agency trial; CPA, broker and job-post referrals</td><td>25 qualified a day</td></tr>
+      <tr><td class="k">2. Scale</td><td>14 Dec-15 Jan</td><td>Raise volume on what works; agency trial; CPA, broker, job-post and VA referrals</td><td>25 qualified a day</td></tr>
       <tr><td class="k">3. Full rate</td><td>18 Jan-12 Feb</td><td>ORUS deadline push to 30 Jan</td><td>500 valid + 50 qualified a day, 5 days in a row</td></tr>
     </tbody>
   </table>
@@ -220,7 +242,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding:18px 0 36px;font
       <tr><td class="chk"><input type="checkbox" id="d3" aria-label="Decision 3 done"></td><td class="k">3. Who qualifies leads</td><td>Name one owner</td><td>13 Nov</td></tr>
       <tr><td class="chk"><input type="checkbox" id="d4" aria-label="Decision 4 done"></td><td class="k">4. Separate sending domain</td><td>Set up before any volume email</td><td>20 Nov</td></tr>
       <tr><td class="chk"><input type="checkbox" id="d5" aria-label="Decision 5 done"></td><td class="k">5. Agency + budget</td><td>30-day trial, paid on qualified leads</td><td>20 Nov</td></tr>
-      <tr><td class="chk"><input type="checkbox" id="d6" aria-label="Decision 6 done"></td><td class="k">6. Referral terms (CPA, job-post, broker, public)</td><td>One simple bonus structure for all</td><td>1 Dec</td></tr>
+      <tr><td class="chk"><input type="checkbox" id="d6" aria-label="Decision 6 done"></td><td class="k">6. Referral terms (CPA, job-post, broker, VA, public)</td><td>One simple bonus structure for all</td><td>1 Dec</td></tr>
     </tbody>
   </table>
 </section>
