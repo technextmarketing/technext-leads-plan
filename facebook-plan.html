@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Facebook Leads Plan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one compact column; section 1 = plan table (action, KPI, target, how it scales, status), section 2 = lead gen KPI summary tables. technext.asia look, light only. */
+:root{
+  --blue:#3167CA; --blue-700:#1E4691; --blue-050:#EAF0FB;
+  --ink:#1F1F3D; --body:#4C4C63; --muted:#6B6B82; --line:#E7E4E9; --alt:#FAF9FB; --white:#FFFFFF;
+  --ok:#137A4A; --ok-050:#E6F4EC; --amber:#A96B00; --amber-050:#FDF6E9; --red:#D93A30; --red-050:#FCEBEA;
+  --f-head:"Plus Jakarta Sans",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-body:"Inter",system-ui,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--body);font:400 13.5px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-block:24px 32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px}
+h1,h2,h3{font-family:var(--f-head);color:var(--ink);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px}
+.brand{font:800 13px/1 var(--f-head);color:var(--blue);letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:26px;font-weight:800;margin-top:6px}
+h1 .hl{color:var(--blue)}
+.meta{font-size:12.5px;color:var(--muted)}
+.cats{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.cl{font:700 11px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.goal{display:flex;flex-wrap:wrap;gap:8px 20px;background:var(--blue-050);border-radius:10px;padding:10px 14px;font-size:13.5px;color:var(--ink)}
+.goal b{color:var(--blue-700)}
+h2{font-size:18px;font-weight:800;margin-top:8px}
+h2 .n{color:var(--blue);margin-right:6px}
+.lead{margin:-8px 0 0;color:var(--muted);font-size:12.5px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:13px}
+.tw.sm table{min-width:620px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 11px/1.3 var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--alt);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.k{color:var(--ink);font-weight:600}
+td.num{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;min-width:130px}
+tr.grp td{background:var(--blue-050);color:var(--blue-700);font:700 11.5px/1.2 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px}
+td ul{margin:4px 0 0;padding-left:16px;display:grid;gap:2px}
+td li::marker{color:var(--blue)}
+.pill{display:inline-block;font:700 11px/1.2 var(--f-body);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.run{background:var(--ok-050);color:var(--ok)} .build{background:var(--blue-050);color:var(--blue-700)} .find{background:var(--amber-050);color:var(--amber)} .red{background:var(--red-050);color:var(--red)}
+.prop{font-size:11px;color:var(--amber);font-weight:600;white-space:nowrap}
+.funnel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.step{border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:0}
+.step .big{font:800 24px/1.1 var(--f-head);color:var(--blue);font-variant-numeric:tabular-nums}
+.step .lab{font-weight:600;color:var(--ink)}
+.step .s{font-size:12px;color:var(--muted)}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--alt);min-width:0}
+.box h3{font-size:14px;margin-bottom:6px}
+.box ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.box li::marker{color:var(--blue)}
+.no li::marker{color:var(--red)}
+.note{margin:0;font-size:12px;color:var(--muted)}
+footer{font-size:12px;color:var(--muted)}
+@media (max-width:760px){.funnel{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.rules{grid-template-columns:1fr} h1{font-size:22px}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="brand">TechNext Marketing</div>
+      <h1>Channel focus: <span class="hl">Facebook</span></h1>
+      <div class="cats"><span class="cl">Category</span><span class="pill build">01 · Paid ads</span><span class="pill build">02 · Group community</span></div>
+    </div>
+    <div class="meta">Rico · 12 Nov 2026 · follows Sky's 11 Nov direction</div>
+  </div>
+
+  <div class="goal">
+    <span><b>Goal:</b> 50 qualified leads a day at a low cost per lead</span>
+    <span><b>Who we sell to:</b> the accountant</span>
+    <span><b>Offer:</b> 5-Day Express BIR CAS Solution</span>
+    <span><b>Next launch:</b> December campaign</span>
+  </div>
+
+  <h2><span class="n">1</span>Plan</h2>
+  <p class="lead">Every line has a number we track weekly and a way to grow once it works. <span class="prop">Proposed</span> targets are for Sky to confirm.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Workstream</th><th>What we do</th><th>How we measure</th><th>Target</th><th>How it scales</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="6">01 · Paid ads</td></tr>
+        <tr><td class="k">Leads campaign</td><td>Run the 5-Day Express Leads campaign (currently working on)</td><td>Leads a day, cost per lead, % that pass the valid check</td><td class="num">Cost per lead set from week-1 baseline</td><td>Move budget to ads that beat the target cost per lead</td><td><span class="pill run">Running</span></td></tr>
+        <tr><td class="k">Test and improve</td><td>New ad and audience tests; no switching channels</td><td>Tests a week, cost per lead trend</td><td class="num">2 tests a week <span class="prop">Proposed</span></td><td>Winning ads become the template for new ones</td><td><span class="pill run">Running</span></td></tr>
+        <tr><td class="k">December campaign</td><td>Launch the new campaign on the winning ads</td><td>Live date, leads in week 1</td><td class="num">Live by 1 Dec</td><td>Same setup reused for Singapore (January planning)</td><td><span class="pill build">Planning</span></td></tr>
+
+        <tr class="grp"><td colspan="6">02 · Group community</td></tr>
+        <tr><td class="k">People who have leads</td><td>Network with people who already have leads and prospects</td><td>New contacts a week, leads passed to us</td><td class="num">10 contacts a week <span class="prop">Proposed</span></td><td>Each active contact becomes a referral partner</td><td><span class="pill build">Building</span></td></tr>
+        <tr><td class="k">Current clients</td><td>Clients introduce businesses with the same BIR CAS need; we follow up</td><td>Introductions a month</td><td class="num">1 per client a quarter <span class="prop">Proposed</span></td><td>Ask every new client after go-live</td><td><span class="pill build">Building</span></td></tr>
+        <tr><td class="k">Bookkeepers and accountants</td><td>Target freelance bookkeepers and any accounting person in Facebook groups (CPA, bookkeeper, accounting graduates)</td><td>Groups active in, posts a week, partners signed</td><td class="num">5 partners in month 1 <span class="prop">Proposed</span></td><td>One partner can bring 10–20 SME clients</td><td><span class="pill build">Building</span></td></tr>
+
+        <tr class="grp"><td colspan="6">03 · Training</td></tr>
+        <tr><td class="k">Learn marketing</td><td>Specialist trains me on our live campaign:<ul><li>Run Facebook ad campaigns myself</li><li>Targeting and testing to lower cost per lead</li><li>Read the numbers, decide what to change</li><li>Grow Facebook communities for leads</li></ul></td><td>Coaching hours a week, campaigns I run alone</td><td class="num">Run a campaign alone by month 3 <span class="prop">Proposed</span></td><td>Skills reused on every future campaign</td><td><span class="pill find">Still looking</span></td></tr>
+        <tr><td class="k">Find a coach / consultant</td><td>A person to consult, guide and teach me (not a company hire), found on Upwork or through an agency:<ul><li>Manila-based, knows the local market</li><li>SaaS or ERP experience, not e-commerce</li><li>Paid-ads specialist only, not an all-rounder</li><li>Strong track record (about $200k Upwork earnings)</li><li>Don't go cheap</li></ul></td><td>Shortlist, intro calls, coaching sessions booked</td><td class="num">3 shortlisted, first session before Dec campaign <span class="prop">Proposed</span></td><td>What I learn is reused for the Singapore launch</td><td><span class="pill find">Still looking</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2><span class="n">2</span>Lead gen KPI summary</h2>
+  <p class="lead">From the Lead Qualification KPI v3 and Agency KPI v3 (12 Nov). Targets are proposed, to agree with the agency before the start.</p>
+  <div class="funnel">
+    <div class="step"><div class="big">1,000</div><div class="lab">leads a day</div><div class="s">TechNext provides</div></div>
+    <div class="step"><div class="big">500</div><div class="lab">valid a day</div><div class="s">Pass all 6 valid checks (about half)</div></div>
+    <div class="step"><div class="big">50</div><div class="lab">qualified a day</div><div class="s">Meeting held with Sales · about 250 a week</div></div>
+    <div class="step"><div class="big">Closed</div><div class="lab">referral bonus</div><div class="s">Paid only when the company signs; no pay per lead</div></div>
+  </div>
+
+  <div class="tw sm">
+    <table>
+      <thead><tr><th>Stage</th><th>Passes when</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Valid lead (6 checks)</td><td>Working email <b>and</b> PH mobile, real first and last name, registered PH company, not already in our CRM, source logged with consent (Data Privacy Act)</td></tr>
+        <tr><td class="k">Qualified lead (7 checks)</td><td>Valid, right person (owner, finance head or the accountant), needs BIR CAS, 15–20 min online meeting booked within 1 week (Mon–Sat), confirmed by Jeric, meeting held, logged in our CRM</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>KPI</th><th>Target</th><th>Red flag</th><th>Checked by</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">Volume</td></tr>
+        <tr><td class="k">Leads worked</td><td class="num">1,000 a day</td><td class="num">Under 800</td><td>Agency</td></tr>
+        <tr><td class="k">Valid leads</td><td class="num">500 a day (50%)</td><td class="num">Under 400</td><td>Agency</td></tr>
+        <tr><td class="k">Qualified leads</td><td class="num">50 a day</td><td class="num">Under 35</td><td>Sales</td></tr>
+        <tr class="grp"><td colspan="4">Speed</td></tr>
+        <tr><td class="k">First contact</td><td class="num">Within 1 working day</td><td class="num">Over 2 working days</td><td>Agency</td></tr>
+        <tr><td class="k">Hand-over to Sales</td><td class="num">Same day</td><td class="num">Over 1 working day</td><td>Sales</td></tr>
+        <tr class="grp"><td colspan="4">Quality</td></tr>
+        <tr><td class="k">Accepted by Sales</td><td class="num">80% or more</td><td class="num">Under 60%</td><td>Sales</td></tr>
+        <tr><td class="k">Meeting show-up</td><td class="num">50% or more</td><td class="num">Under 35%</td><td>Sales</td></tr>
+        <tr><td class="k">Data complete / duplicates</td><td class="num">100% / 0</td><td class="num">Any miss</td><td>TechNext</td></tr>
+        <tr><td class="k">Privacy or copy breaches</td><td class="num">0</td><td class="num">Any one</td><td>TechNext</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Weekly review: <span class="pill run">Green</span> every target met, keep going · <span class="pill find">Amber</span> below target, agree a fix · <span class="pill red">Red</span> any red flag or breach, pause; two red weeks or any breach, stop. Bonus amount and payout timing not set yet.</p>
+
+  <div class="rules">
+    <div class="box">
+      <h3>How we work</h3>
+      <ul>
+        <li>One channel, about 3 months, decisions based on the numbers</li>
+        <li>Pay for an expert instead of a cheap option</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <h3>Not doing</h3>
+      <ul>
+        <li>Bought, leaked or ex-employee contact lists</li>
+        <li>Emailing our clients' customer lists without consent</li>
+        <li>Other channels and platforms for now</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>Internal plan · TechNext · 5-Day Express timing depends on scope and data; TechNext is not affiliated with the BIR.</footer>
+</div>
+
+</html>
